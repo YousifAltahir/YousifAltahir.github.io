@@ -1,0 +1,88 @@
+/* ============================================================
+   layout.css — page shell + bento grid.
+
+   Simple 2-column grid, rows sized to content (no row-spans,
+   so no empty stretch-gaps). Reading order == visual order:
+
+     identity            (full-width, on top)
+     flagship | experience
+     mental   | football
+     skills              (full-width bar)
+   ============================================================ */
+
+.shell {
+  width: min(1180px, 100% - 2 * var(--gap));
+  margin-inline: auto;
+  padding-block: clamp(1rem, 0.5rem + 2vw, 2rem)
+    clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: stretch; /* paired cards match height */
+}
+
+/* full-width tiles */
+.identity,
+.more-wrap,
+.skills-wide {
+  grid-column: 1 / -1;
+}
+
+/* A labeled column: section label on top, card below (fills height). */
+.labeled {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.labeled .tile {
+  flex: 1;
+}
+
+/* More-projects toggle region */
+.more-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.more-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+/* Must beat the plain .more-grid rule so the hidden panel stays hidden. */
+.more-grid[hidden] {
+  display: none;
+}
+@media (max-width: 560px) {
+  .more-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Skills laid out as a wide, filled bar */
+.skills-wide .skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* --- Tablet --- */
+@media (max-width: 760px) {
+  .skills-wide .skill-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- Mobile --- */
+@media (max-width: 560px) {
+  .bento {
+    grid-template-columns: 1fr;
+  }
+  .skills-wide .skill-grid {
+    grid-template-columns: 1fr;
+  }
+}

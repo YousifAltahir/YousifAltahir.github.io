@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yousif Ahmed — Software Engineer</title>
+  <meta name="description" content="Yousif Ahmed — Software Engineer in Sharjah, UAE. AI-powered backend & full-stack: RAG pipelines, NLP, and computer vision." />
+
+  <!-- Set theme BEFORE first paint to avoid a flash of the wrong mode. -->
+  <script>
+    (function () {
+      try {
+        // Light is the base. Use it on first visit; only honour a saved choice.
+        var saved = localStorage.getItem('yousif-theme');
+        document.documentElement.setAttribute('data-theme', saved || 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+
+<body>
+  <!-- ============================ HEADER ============================
+       Persistent. Name on the left; the links ARE their logos.
+       Icons are inlined so the header renders even without JS.
+  -->
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Yousif Ahmed — home">Yousif Ahmed</a>
+
+    <nav class="header-actions" aria-label="Contact and links">
+      <!-- Email -->
+      <a class="icon-btn" href="mailto:yousifaltahir138@gmail.com" aria-label="Email Yousif" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 6 9-6"/></svg>
+      </a>
+
+      <!-- GitHub -->
+      <a class="icon-btn" href="https://github.com/YousifAltahir" target="_blank" rel="noopener" aria-label="Yousif on GitHub" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.8 5.64-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a class="icon-btn" href="https://www.linkedin.com/in/yousif-altahir-309355292/" target="_blank" rel="noopener" aria-label="Yousif on LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+      </a>
+
+      <!-- Download CV -->
+      <a class="cv-btn" href="assets/yousifCV.pdf" download aria-label="Download CV (PDF)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 20h16"/></svg>
+        <span class="label">Download CV</span>
+      </a>
+
+      <!-- Light / dark toggle (rendered by js/theme-toggle.js) -->
+      <theme-toggle></theme-toggle>
+    </nav>
+  </header>
+
+  <!-- ============================ CONTENT ============================
+       Each tile is a <bento-card>. To add a project, copy one
+       project card block and edit the text + repo href.
+  -->
+  <main class="shell">
+    <section class="bento" aria-label="About Yousif Ahmed">
+
+      <!-- ---------- Identity (hero) — centered, middle column ---------- -->
+      <bento-card class="identity" data-area="identity">
+        <span class="eyebrow">Software Engineer</span>
+        <h1>Building AI into real software.</h1>
+        <p class="role">AI-powered backend &amp; full-stack engineering.</p>
+        <p class="location">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Sharjah, United Arab Emirates
+        </p>
+        <p class="summary">
+          Software Engineering graduate specialising in RAG pipelines, NLP and
+          computer-vision applications, and scalable financial platforms — building
+          reliable software that pairs AI with real-world business outcomes.
+        </p>
+      </bento-card>
+
+      <!-- ---------- Flagship (InVox) — label sits ABOVE the card ---------- -->
+      <div class="labeled">
+        <span class="section-label">Flagship</span>
+        <bento-card interactive>
+          <div class="card-head">
+            <h3>InVox — Invoice Intelligence</h3>
+            <a class="repo-link" href="#" target="_blank" rel="noopener" aria-label="InVox on GitHub (link coming soon)" title="Repository — coming soon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.8 5.64-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg>
+            </a>
+          </div>
+          <p class="impact">
+            A 9-stage OCR + LLM ingestion pipeline with a hybrid RAG engine
+            (pgvector retrieval, query rewriting, reranking, intent routing) grounding
+            financial answers in database results. Provider-agnostic across Gemini,
+            OpenAI, Grok &amp; Ollama.
+          </p>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">FastAPI</span>
+            <span class="chip">React</span><span class="chip">PostgreSQL</span>
+            <span class="chip">pgvector</span><span class="chip">Gemini</span>
+            <span class="chip">Ollama</span>
+          </div>
+        </bento-card>
+      </div>
+
+      <!-- ---------- Experience (Quenet) — label sits ABOVE the card ---------- -->
+      <div class="labeled">
+        <span class="section-label">Experience</span>
+        <bento-card interactive>
+          <div class="card-head">
+            <h3>Quenet — QMS Dashboard</h3>
+            <a class="repo-link" href="https://github.com/YousifAltahir/QMS-dashboard" target="_blank" rel="noopener" aria-label="QMS Dashboard on GitHub" title="View repository">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.8 5.64-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg>
+            </a>
+          </div>
+          <p class="impact">
+            Built a real-time full-stack dashboard on Qmatic APIs, visualising live
+            branch, queue &amp; service-point KPIs. Node/Express pipelines aggregate and
+            normalise operational data into live metrics and alerts.
+          </p>
+          <div class="chips">
+            <span class="chip">React</span><span class="chip">TypeScript</span>
+            <span class="chip">Node.js</span><span class="chip">Express</span>
+            <span class="chip">Tailwind</span>
+          </div>
+        </bento-card>
+      </div>
+
+      <!-- ---------- More projects — hidden behind a toggle ---------- -->
+      <div class="more-wrap">
+        <button class="more-btn" type="button" aria-expanded="false" aria-controls="more-projects">
+          <span class="more-btn__text">View more projects</span>
+          <svg class="more-btn__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+
+        <div class="more-grid" id="more-projects" hidden>
+          <!-- Mental Health Text Classifier -->
+          <bento-card interactive>
+            <div class="card-head">
+              <div>
+                <span class="eyebrow">NLP · Deep Learning</span>
+                <h3>Mental Health Text Classifier</h3>
+              </div>
+              <a class="repo-link" href="#" target="_blank" rel="noopener" aria-label="Mental Health Text Classifier on GitHub (link coming soon)" title="Repository — coming soon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.8 5.64-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg>
+              </a>
+            </div>
+            <p class="impact">
+              Fine-tuned DistilBERT on 42,380 labelled statements across 7 classes
+              (83% validation accuracy, 0.81 macro F1), with FAISS semantic retrieval
+              and full per-class evaluation.
+            </p>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">Hugging Face</span>
+              <span class="chip">PyTorch</span><span class="chip">FAISS</span>
+              <span class="chip">Streamlit</span>
+            </div>
+          </bento-card>
+
+          <!-- Football Match Analysis -->
+          <bento-card interactive>
+            <div class="card-head">
+              <div>
+                <span class="eyebrow">Computer Vision</span>
+                <h3>Football Match Analysis</h3>
+              </div>
+              <a class="repo-link" href="#" target="_blank" rel="noopener" aria-label="Football Match Analysis on GitHub (link coming soon)" title="Repository — coming soon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.8 5.64-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg>
+              </a>
+            </div>
+            <p class="impact">
+              A YOLOv8 pipeline tracking players and the ball across match footage —
+              K-means jersey clustering for team assignment, optical-flow camera
+              compensation, perspective transform to pitch coordinates, and per-player
+              speed &amp; distance.
+            </p>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">OpenCV</span>
+              <span class="chip">PyTorch</span><span class="chip">Ultralytics</span>
+              <span class="chip">Roboflow</span>
+            </div>
+          </bento-card>
+        </div>
+      </div>
+
+      <!-- ---------- Skills — full-width bar ---------- -->
+      <bento-card class="skills-wide">
+        <span class="eyebrow">Toolbox</span>
+        <div class="skill-grid">
+          <div class="skill-group">
+            <div class="label">Languages</div>
+            <div class="items">Python · JavaScript / TypeScript · C++</div>
+          </div>
+          <div class="skill-group">
+            <div class="label">AI / Machine Learning</div>
+            <div class="items">RAG · Transformers · Vector DBs · Intent Classification · NLP · Computer Vision</div>
+          </div>
+          <div class="skill-group">
+            <div class="label">Frameworks</div>
+            <div class="items">FastAPI · React · Node.js · PyTorch · Hugging Face · OpenCV · Ultralytics</div>
+          </div>
+          <div class="skill-group">
+            <div class="label">Data &amp; Vector Stores</div>
+            <div class="items">PostgreSQL · pgvector · MySQL · FAISS · Supabase</div>
+          </div>
+        </div>
+      </bento-card>
+
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================
+       "Get in touch" as an inverted full-width footer. Phone added.
+  -->
+  <footer class="site-footer">
+    <div class="footer-lead">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Let’s talk.</h2>
+    </div>
+    <nav class="contact-list" aria-label="Contact details">
+      <a href="mailto:yousifaltahir138@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 6 9-6"/></svg>
+        yousifaltahir138@gmail.com
+      </a>
+      <a href="tel:+971507488424">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5c0-1 .8-2 1.9-2h2c.8 0 1.5.5 1.7 1.3l.9 3a1.8 1.8 0 0 1-.5 1.8L8.5 9.9a13 13 0 0 0 5.6 5.6l.8-1.4c.4-.6 1.1-.9 1.8-.7l3 .9c.8.2 1.3.9 1.3 1.7v2c0 1.1-1 1.9-2 1.9A17 17 0 0 1 4 5Z"/></svg>
+        +971 50 748 8424
+      </a>
+      <a href="https://www.linkedin.com/in/yousif-altahir-309355292/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        linkedin.com/in/YousifAtltahir
+      </a>
+      <a href="https://github.com/YousifAltahir" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.23 0 4.62-2.8 5.64-5.48 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z"/></svg>
+        github.com/YousifAltahir
+      </a>
+    </nav>
+  </footer>
+
+  <!-- Web Components (ES modules, deferred by nature) -->
+  <script type="module" src="js/theme-toggle.js"></script>
+  <script type="module" src="js/bento-card.js"></script>
+  <script type="module" src="js/more-projects.js"></script>
+</body>
+</html>
