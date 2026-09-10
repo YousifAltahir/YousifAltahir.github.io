@@ -12,9 +12,14 @@ const panel = document.getElementById('more-projects');
 if (btn && panel) {
   btn.addEventListener('click', () => {
     const open = btn.getAttribute('aria-expanded') === 'true';
+    const nextKey = open ? 'moreBtnShow' : 'moreBtnHide';
     btn.setAttribute('aria-expanded', String(!open));
-    btn.querySelector('.more-btn__text').textContent =
-      open ? 'View more projects' : 'Hide projects';
+    const textEl = btn.querySelector('.more-btn__text');
+    textEl.setAttribute('data-i18n', nextKey);
+    // Use the shared translator (js/lang-toggle.js) so the label is
+    // correct in whichever language is currently active.
+    textEl.textContent = window.i18n ? window.i18n.t(nextKey)
+      : (open ? 'View more projects' : 'Hide projects');
     panel.hidden = open;                 // show when currently closed
   });
 }

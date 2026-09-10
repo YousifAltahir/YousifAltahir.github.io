@@ -2,7 +2,7 @@
    base.css — reset, fonts, global typography.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -37,6 +37,14 @@ a {
 }
 
 img, svg { display: block; max-width: 100%; }
+
+/* ---------- Arabic (RTL) ----------
+   Cairo reads well in both scripts, so we swap the whole type
+   system to it once the page flips to Arabic. */
+:root[dir="rtl"] body { font-family: 'Cairo', var(--font-body); }
+:root[dir="rtl"] h1,
+:root[dir="rtl"] h2,
+:root[dir="rtl"] h3 { font-family: 'Cairo', var(--font-head); }
 
 :focus-visible {
   outline: 2px solid var(--ink);
