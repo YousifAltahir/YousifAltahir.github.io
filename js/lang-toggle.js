@@ -70,6 +70,12 @@
       'وترحيل قاعدة بيانات Postgres عبر Alembic. تم النشر كخدمة Docker على Render مع Supabase ' +
       'لقاعدة البيانات والتخزين، وواجهة أمامية ثابتة على Vercel.',
 
+    eduEyebrow: 'التعليم والإنجازات',
+    eduUni: 'جامعة قبرص الدولية',
+    eduDegree: 'بكالوريوس هندسة البرمجيات',
+    eduHonors: 'مرتبة الشرف',
+    eduGoldenVisa: 'التأشيرة الذهبية الإماراتية — التفوق في المرحلة الثانوية',
+
     toolboxEyebrow: 'الأدوات',
     skillLanguagesLabel: 'لغات البرمجة',
     skillAiLabel: 'الذكاء الاصطناعي / تعلم الآلة',

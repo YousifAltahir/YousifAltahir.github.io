@@ -312,6 +312,53 @@
 }
 .skill-group .items { color: var(--ink); }
 
+/* ---------- Education & Achievements ---------- */
+.education .edu-degree {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.badge-honors {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding: 0.3rem 0.55rem;
+  border-radius: var(--radius-sm);
+}
+
+.achievement-list {
+  list-style: none;
+  margin: 0.3rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.achievement-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+}
+.achievement-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  flex: none;
+}
+
 /* ---------- Footer (inverted "get in touch") ----------
    Colors are inverted vs. the page: ink background, bg-colored
    text. This holds in both light and dark modes automatically. */
