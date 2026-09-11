@@ -166,7 +166,11 @@
   flex-direction: column;
   gap: 0.65rem;
   padding: var(--pad);
-  background-color: var(--surface);
+  /* Slightly translucent so the fixed mountain scenery shows
+     through, blurred — a light frosted-glass touch, not full glass. */
+  background-color: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
   background-image:
     radial-gradient(circle, var(--line-strong) 1.4px, transparent 1.6px),
     radial-gradient(circle, var(--line-strong) 1.4px, transparent 1.6px),
@@ -191,9 +195,15 @@
 .tile.is-interactive { cursor: pointer; }
 .tile.is-interactive:hover {
   transform: translateY(-4px);
-  background-color: var(--surface-hover);
+  background-color: color-mix(in srgb, var(--surface-hover) 94%, transparent);
   border-color: var(--line-strong);
   box-shadow: var(--shadow-hover), inset 0 2px 0 var(--red);
+}
+
+/* Fallback for browsers without backdrop-filter: stay legible/opaque. */
+@supports not (backdrop-filter: blur(1px)) {
+  .tile { background-color: var(--surface); }
+  .tile.is-interactive:hover { background-color: var(--surface-hover); }
 }
 
 .tile .eyebrow {
@@ -363,7 +373,9 @@
    Colors are inverted vs. the page: ink background, bg-colored
    text. This holds in both light and dark modes automatically. */
 .site-footer {
-  background: var(--ink);
+  background-color: color-mix(in srgb, var(--ink) 94%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
   color: var(--bg);
   border-radius: var(--radius);
   margin: 0 auto clamp(1.5rem, 1rem + 2vw, 2.5rem);
@@ -374,6 +386,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem 2rem;
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .site-footer { background-color: var(--ink); }
 }
 .site-footer .footer-lead h2 {
   font-size: var(--step-2);
