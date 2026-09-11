@@ -140,6 +140,7 @@
   background: var(--surface-hover);
   border-color: var(--ink);
   transform: translateY(-1px);
+  box-shadow: inset 0 2px 0 var(--red);
 }
 .more-btn__chevron {
   width: 18px; height: 18px;
@@ -204,6 +205,18 @@
 @supports not (backdrop-filter: blur(1px)) {
   .tile { background-color: var(--surface); }
   .tile.is-interactive:hover { background-color: var(--surface-hover); }
+}
+
+/* The hero isn't a link, but gets the same red glyph-edge + lift
+   on hover as the project tiles for visual consistency. */
+.identity:hover {
+  transform: translateY(-4px);
+  background-color: color-mix(in srgb, var(--surface-hover) 94%, transparent);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-hover), inset 0 2px 0 var(--red);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .identity:hover { background-color: var(--surface-hover); }
 }
 
 .tile .eyebrow {
@@ -386,9 +399,16 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem 2rem;
+  box-shadow: var(--shadow);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 @supports not (backdrop-filter: blur(1px)) {
   .site-footer { background-color: var(--ink); }
+}
+/* Same red glyph-edge + lift as the interactive project tiles. */
+.site-footer:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover), inset 0 2px 0 var(--red);
 }
 .site-footer .footer-lead h2 {
   font-size: var(--step-2);
