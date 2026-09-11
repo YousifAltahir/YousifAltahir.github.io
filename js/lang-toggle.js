@@ -18,6 +18,9 @@
 
   // English text is already in the HTML — only Arabic needs listing here.
   var AR = {
+    // First name + surname (Altahir), not the English "given + father's name" form.
+    brandName: 'يوسف الطاهر',
+
     cvBtn: 'تحميل السيرة الذاتية',
 
     identityEyebrow: 'مهندس برمجيات',
