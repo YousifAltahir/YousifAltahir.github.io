@@ -33,6 +33,7 @@
       'الاصطناعي بحلول أعمال واقعية.',
 
     labelFlagship: 'المشروع الرئيسي',
+    invoxEyebrow: 'RAG + OCR',
     invoxTitle: 'InVox — ذكاء الفواتير',
     invoxImpact:
       'خط معالجة من 9 مراحل يجمع بين استخراج النصوص (OCR) ونماذج اللغة الكبيرة، مع محرك RAG هجين ' +
@@ -41,6 +42,7 @@
       'مضيفًا طبقة ذكاء إلى منصة معالجة الفواتير.',
 
     labelExperience: 'الخبرة',
+    quenetEyebrow: 'الوسيط البرمجي ومعالجة واجهات API',
     quenetTitle: 'Quenet — لوحة تحكم QMS',
     quenetImpact:
       'بناء لوحة تحكم متكاملة وفورية باستخدام واجهات Qmatic البرمجية، لعرض مؤشرات أداء الفروع ' +
@@ -48,7 +50,9 @@
       'في مقاييس وتنبيهات حية.',
 
     moreBtnShow: 'عرض المزيد من المشاريع',
-    moreBtnHide: 'إخفاء المشاريع',
+    moreBtnHide: 'إخفاء',
+
+    labelProject: 'مشروع',
 
     mentalEyebrow: 'معالجة اللغة الطبيعية · تعلم عميق',
     mentalTitle: 'مصنّف نصوص الصحة النفسية',
@@ -91,7 +95,11 @@
 
   // Cache the original English text the first time we see each element,
   // so switching back to English is exact — not a re-typed guess.
-  var EN = {};
+  // moreBtnHide never appears in the DOM as data-i18n (the button
+  // starts on the "show" label and only swaps to "hide" via JS), so
+  // collectEnglish() below would never capture it — seed it here or
+  // t() falls back to returning the raw key string.
+  var EN = { moreBtnHide: 'Hide' };
 
   function collectEnglish() {
     document.querySelectorAll('[data-i18n]').forEach(function (el) {

@@ -19,7 +19,7 @@ if (btn && panel) {
     // Use the shared translator (js/lang-toggle.js) so the label is
     // correct in whichever language is currently active.
     textEl.textContent = window.i18n ? window.i18n.t(nextKey)
-      : (open ? 'View more projects' : 'Hide projects');
+      : (open ? 'View more projects' : 'Hide');
     panel.hidden = open;                 // show when currently closed
   });
 }
