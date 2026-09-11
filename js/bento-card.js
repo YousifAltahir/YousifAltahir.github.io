@@ -5,14 +5,17 @@
    (easy to edit later), the element only adds behaviour.
 
    Attributes:
-     interactive     -> hover-lift affordance (for project/exp tiles)
-     data-span="1..4"-> grid column span   (styled in layout.css)
-     data-rows="2"   -> grid row span      (styled in layout.css)
+     interactive -> hover-lift + red glyph-edge affordance
+                    (for project/experience tiles)
 
    Example:
-     <bento-card interactive data-span="2">
+     <bento-card interactive>
        ...your markup...
      </bento-card>
+
+   Placement/sizing is handled by css/layout.css (identity, the
+   flagship/experience pair, the more-projects grid, skills-row),
+   not by attributes on this element.
    ============================================================ */
 
 class BentoCard extends HTMLElement {

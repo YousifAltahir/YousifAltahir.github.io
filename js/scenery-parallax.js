@@ -26,7 +26,10 @@
 (function () {
   var layers = document.querySelectorAll('.scenery__layer');
   var celestial = document.querySelector('.scenery__celestial');
-  var labels = document.querySelectorAll('.section-label');
+  // Only "Experience" sits low enough to actually cross the moon in
+  // practice, and it's the only one meant to flip — "Flagship" stays
+  // as-is even if it technically overlaps.
+  var labels = document.querySelectorAll('.section-label[data-i18n="labelExperience"]');
 
   if (!layers.length && !(celestial && labels.length)) return;
 
