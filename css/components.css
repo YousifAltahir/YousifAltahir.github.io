@@ -100,7 +100,17 @@
   font-size: var(--step--1);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink);
+  /* Self-inverting text: white + mix-blend-mode:difference means
+     the rendered color is (255 - whatever's behind it), per pixel.
+     Because our palette is already near-black ink / near-white bg,
+     that math lands almost exactly back on the normal look against
+     the page (white on off-white ≈ near-black, matching --ink) —
+     but automatically flips to near-white wherever it crosses the
+     black sun / dark mountains, and near-black over the white moon
+     in dark mode. No per-theme rule needed; it's the same formula
+     both ways. */
+  color: #fff;
+  mix-blend-mode: difference;
 }
 .section-label::before {
   content: "0" counter(section);
