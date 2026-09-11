@@ -26,10 +26,10 @@
 (function () {
   var layers = document.querySelectorAll('.scenery__layer');
   var celestial = document.querySelector('.scenery__celestial');
-  // Only "Experience" sits low enough to actually cross the moon in
-  // practice, and it's the only one meant to flip — "Flagship" stays
-  // as-is even if it technically overlaps.
-  var labels = document.querySelectorAll('.section-label[data-i18n="labelExperience"]');
+  // Only labels marked .celestial-aware participate in the flip
+  // (currently: Experience, and the Coach project's "Project" label)
+  // — others, like Flagship, stay as-is even if they overlap.
+  var labels = document.querySelectorAll('.section-label.celestial-aware');
 
   if (!layers.length && !(celestial && labels.length)) return;
 

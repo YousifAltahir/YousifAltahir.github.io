@@ -62,6 +62,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--gap);
+  /* Its own numbering scope: the hidden projects count 01, 02, 03
+     on their own, instead of continuing from Flagship/Experience. */
+  counter-reset: section;
 }
 /* Must beat the plain .more-grid rule so the hidden panel stays hidden. */
 .more-grid[hidden] {
