@@ -2,7 +2,7 @@
    base.css — reset, fonts, global typography.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=DotGothic16&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -19,6 +19,14 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+
+  /* Faint dot-matrix texture — a direct, restrained Nothing nod.
+     One dot every 22px, near-invisible until you look for it. */
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+:root[data-theme="dark"] body {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
 }
 
 h1, h2, h3 {

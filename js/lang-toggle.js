@@ -18,6 +18,9 @@
 
   // English text is already in the HTML — only Arabic needs listing here.
   var AR = {
+    // First name + surname (Altahir), not the English "given + father's name" form.
+    brandName: 'يوسف الطاهر',
+
     cvBtn: 'تحميل السيرة الذاتية',
 
     identityEyebrow: 'مهندس برمجيات',
@@ -69,6 +72,12 @@
       'وخط استقبال محدود التزامن يتحمّل ذروة الاستخدام الصفّي. واجهة أمامية SPA بجافاسكربت خالصة، ' +
       'وترحيل قاعدة بيانات Postgres عبر Alembic. تم النشر كخدمة Docker على Render مع Supabase ' +
       'لقاعدة البيانات والتخزين، وواجهة أمامية ثابتة على Vercel.',
+
+    eduEyebrow: 'التعليم والإنجازات',
+    eduUni: 'جامعة قبرص الدولية',
+    eduDegree: 'بكالوريوس هندسة البرمجيات',
+    eduHonors: 'مرتبة الشرف',
+    eduGoldenVisa: 'التأشيرة الذهبية الإماراتية — التفوق في المرحلة الثانوية',
 
     toolboxEyebrow: 'الأدوات',
     skillLanguagesLabel: 'لغات البرمجة',

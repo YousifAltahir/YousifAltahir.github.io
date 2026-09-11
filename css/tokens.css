@@ -1,24 +1,37 @@
 /* ============================================================
    tokens.css — the single place to restyle the whole site.
    Change a value here and it cascades everywhere.
-   Strictly monochrome: off-white + ink, inverted for dark.
+
+   NOTHING-VARIANT: a Nothing-phone-inspired reskin. Still
+   strictly monochrome off-white/ink at heart, but with a
+   single red "glyph" accent, a technical mono type layer, and
+   a tighter, more rectilinear geometry (transparent-panel /
+   spec-sheet feel rather than soft-bento).
    ============================================================ */
 
 :root {
   /* --- Palette (LIGHT is the base) --- */
-  --bg:            #f4f2ec;   /* warm off-white canvas            */
+  --bg:            #f2f1ec;   /* warm off-white canvas            */
   --surface:       #fbfaf7;   /* tiles sit slightly above the bg  */
   --surface-hover: #ffffff;   /* tile on hover                    */
-  --ink:           #0b0b0c;   /* near-black primary text          */
+  --ink:           #0a0a0a;   /* near-black primary text          */
   --ink-soft:      #4a4a4d;   /* secondary text                   */
-  --ink-faint:     #7a7a7e;   /* captions / meta                  */
-  --line:          #e2ded4;   /* hairline borders                 */
-  --line-strong:   #d2cdc0;   /* borders on hover / dividers      */
-  --chip-bg:       #ece9e1;   /* tech chips                       */
+  --ink-faint:     #83817a;   /* captions / meta                  */
+  --line:          #d8d4c8;   /* hairline borders                 */
+  --line-strong:   #b9b4a4;   /* borders on hover / dividers      */
+  --chip-bg:       transparent; /* chips are outlined, not filled */
 
-  /* --- Typography --- */
+  /* --- The one accent: Nothing's signature red "glyph" dot --- */
+  --red: #e9432d;
+
+  /* --- Typography ---
+     Display/body stays a clean grotesk for legibility; a mono
+     layer carries the technical/"spec sheet" voice (labels,
+     chips, index numbers) — that's where the Nothing feel lives. */
   --font-head: "Archivo", system-ui, sans-serif;
   --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+  --font-dot:  "DotGothic16", var(--font-mono);
 
   /* fluid type scale */
   --step--1: clamp(0.80rem, 0.77rem + 0.15vw, 0.88rem);
@@ -30,8 +43,8 @@
   /* --- Spacing --- */
   --gap:     clamp(0.75rem, 0.5rem + 1vw, 1.15rem);
   --pad:     clamp(1.1rem, 0.9rem + 0.8vw, 1.6rem);
-  --radius:  18px;
-  --radius-sm: 10px;
+  --radius:  10px;      /* tighter, more rectilinear than the base variant */
+  --radius-sm: 4px;
 
   /* --- Motion --- */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -41,20 +54,25 @@
   --shadow:       0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-hover: 0 14px 34px -18px rgba(0, 0, 0, 0.30);
 
+  /* --- Corner registration mark size (the "screw" motif) --- */
+  --tick: 9px;
+
   color-scheme: light;
 }
 
 /* --- DARK: exact inversion --- */
 :root[data-theme="dark"] {
-  --bg:            #0b0b0c;
-  --surface:       #141416;
-  --surface-hover: #1b1b1e;
-  --ink:           #f4f2ec;
+  --bg:            #0a0a0a;
+  --surface:       #131313;
+  --surface-hover: #1a1a1a;
+  --ink:           #f2f1ec;
   --ink-soft:      #b7b5ae;
-  --ink-faint:     #86847e;
-  --line:          #26262a;
-  --line-strong:   #34343a;
-  --chip-bg:       #201f22;
+  --ink-faint:     #817f78;
+  --line:          #262622;
+  --line-strong:   #38372f;
+  --chip-bg:       transparent;
+
+  --red: #ff5b41;   /* slightly brighter so it still pops on black */
 
   --shadow:       0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-hover: 0 16px 40px -18px rgba(0, 0, 0, 0.7);

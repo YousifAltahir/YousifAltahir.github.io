@@ -31,7 +31,7 @@
        Icons are inlined so the header renders even without JS.
   -->
   <header class="site-header">
-    <a class="brand" href="#" aria-label="Yousif Ahmed — home">Yousif Ahmed</a>
+    <a class="brand" href="#" aria-label="Yousif Ahmed — home" data-i18n="brandName">Yousif Ahmed</a>
 
     <nav class="header-actions" aria-label="Contact and links">
       <!-- Email -->
@@ -229,28 +229,43 @@
 
       
 
-      <!-- ---------- Skills — full-width bar ---------- -->
-      <bento-card class="skills-wide">
-        <span class="eyebrow" data-i18n="toolboxEyebrow">Toolbox</span>
-        <div class="skill-grid">
-          <div class="skill-group">
-            <div class="label" data-i18n="skillLanguagesLabel">Languages</div>
-            <div class="items">Python · JavaScript / TypeScript · C++</div>
+      <!-- ---------- Skills + Education, side by side ---------- -->
+      <div class="skills-row">
+        <bento-card class="skills-wide">
+          <span class="eyebrow" data-i18n="toolboxEyebrow">Toolbox</span>
+          <div class="skill-grid">
+            <div class="skill-group">
+              <div class="label" data-i18n="skillLanguagesLabel">Languages</div>
+              <div class="items">Python · JavaScript / TypeScript · C++</div>
+            </div>
+            <div class="skill-group">
+              <div class="label" data-i18n="skillAiLabel">AI / Machine Learning</div>
+              <div class="items">RAG · Transformers · Vector DBs · Intent Classification · NLP · Computer Vision</div>
+            </div>
+            <div class="skill-group">
+              <div class="label" data-i18n="skillFrameworksLabel">Frameworks</div>
+              <div class="items">FastAPI · React · Node.js · PyTorch · Hugging Face · OpenCV · Ultralytics</div>
+            </div>
+            <div class="skill-group">
+              <div class="label" data-i18n="skillDataLabel">Data &amp; Vector Stores</div>
+              <div class="items">PostgreSQL · pgvector · MySQL · FAISS · Supabase</div>
+            </div>
           </div>
-          <div class="skill-group">
-            <div class="label" data-i18n="skillAiLabel">AI / Machine Learning</div>
-            <div class="items">RAG · Transformers · Vector DBs · Intent Classification · NLP · Computer Vision</div>
-          </div>
-          <div class="skill-group">
-            <div class="label" data-i18n="skillFrameworksLabel">Frameworks</div>
-            <div class="items">FastAPI · React · Node.js · PyTorch · Hugging Face · OpenCV · Ultralytics</div>
-          </div>
-          <div class="skill-group">
-            <div class="label" data-i18n="skillDataLabel">Data &amp; Vector Stores</div>
-            <div class="items">PostgreSQL · pgvector · MySQL · FAISS · Supabase</div>
-          </div>
-        </div>
-      </bento-card>
+        </bento-card>
+
+        <!-- ---------- Education & Achievements ---------- -->
+        <bento-card class="education">
+          <span class="eyebrow" data-i18n="eduEyebrow">Education &amp; Achievements</span>
+          <h3 data-i18n="eduUni">Cyprus International University</h3>
+          <p class="edu-degree">
+            <span data-i18n="eduDegree">B.Sc. Software Engineering</span>
+            <span class="badge-honors" data-i18n="eduHonors">Honors</span>
+          </p>
+          <ul class="achievement-list">
+            <li data-i18n="eduGoldenVisa">UAE Golden Visa — High School Excellence</li>
+          </ul>
+        </bento-card>
+      </div>
 
     </section>
   </main>

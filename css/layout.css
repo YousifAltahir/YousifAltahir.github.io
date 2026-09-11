@@ -27,8 +27,19 @@
 /* full-width tiles */
 .identity,
 .more-wrap,
-.skills-wide {
+.skills-row {
   grid-column: 1 / -1;
+}
+
+/* Skills (wide) + Education, side by side within their own row */
+.skills-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--gap);
+  align-items: stretch;
+}
+@media (max-width: 760px) {
+  .skills-row { grid-template-columns: 1fr; }
 }
 
 /* A labeled column: section label on top, card below (fills height). */
