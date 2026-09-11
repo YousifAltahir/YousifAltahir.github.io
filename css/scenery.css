@@ -24,7 +24,17 @@
 /* Back-to-front: fainter/higher layers read as distance (haze),
    the frontmost layer is the boldest — same logic as the photo
    reference's atmospheric perspective. */
-.scenery__layer { fill: var(--ink); }
+.scenery__layer {
+  fill: var(--ink);
+  /* Grows on scroll (see js/scenery-parallax.js). transform-box:
+     view-box anchors the percentage origin to the shared SVG
+     viewBox (top-middle), not each path's own differing bounding
+     box, so every layer scales toward that same point and reads
+     as converging there together while it grows. */
+  transform-box: view-box;
+  transform-origin: 50% 0%;
+  will-change: transform;
+}
 .scenery__layer--1 { opacity: 0.05; }
 .scenery__layer--2 { opacity: 0.09; }
 .scenery__layer--3 { opacity: 0.14; }
@@ -36,6 +46,27 @@
 :root[data-theme="dark"] .scenery__layer--2 { opacity: 0.12; }
 :root[data-theme="dark"] .scenery__layer--3 { opacity: 0.18; }
 :root[data-theme="dark"] .scenery__layer--4 { opacity: 0.26; }
+
+/* ---------- Celestial body ----------
+   One circle, var(--ink) fill — the same trick as the mountains —
+   so it's a black sun in the light-mode sky and a white moon in
+   the dark-mode sky, no separate rules needed. A standalone fixed
+   element (not part of the bottom-anchored .scenery band) so it
+   sits high, top-middle, independent of the mountains' growth. */
+.scenery__celestial {
+  position: fixed;
+  top: clamp(4rem, 12vh, 7.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(150px, 22vw, 260px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: 0.92;
+  z-index: -1;
+  pointer-events: none;
+  box-shadow: 0 0 130px 26px color-mix(in srgb, var(--ink) 30%, transparent);
+}
 
 /* Respect users who've asked for less visual noise. */
 @media (prefers-reduced-transparency: reduce) {

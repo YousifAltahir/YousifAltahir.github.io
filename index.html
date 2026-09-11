@@ -35,6 +35,12 @@
        mountains and dark mode shows white ones automatically, with
        no per-theme overrides needed. Purely decorative.
   -->
+  <!-- One circle: a black sun in light mode, a white moon in dark
+       mode (var(--ink) flips automatically, same trick as the
+       mountains). Standalone/fixed, high and centered, independent
+       of the bottom-anchored mountain band. -->
+  <div class="scenery__celestial" aria-hidden="true"></div>
+
   <div class="scenery" aria-hidden="true">
     <svg viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
       <!-- Jagged ridgelines (straight segments, not curves) so these
@@ -322,6 +328,7 @@
   </footer>
 
   <!-- Web Components (ES modules, deferred by nature) -->
+  <script src="js/scenery-parallax.js"></script>
   <script type="module" src="js/theme-toggle.js"></script>
   <script type="module" src="js/lang-toggle.js"></script>
   <script type="module" src="js/bento-card.js"></script>
