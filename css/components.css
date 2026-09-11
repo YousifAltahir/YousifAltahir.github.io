@@ -159,8 +159,9 @@
 }
 
 /* ---------- Bento tile ----------
-   Four faint corner dots stand in for Nothing's visible screws —
-   a literal "transparent panel" detail, deliberately quiet. */
+   Corner hardware (real bolts/screws, see corner-hardware.css)
+   stands in for Nothing's visible screws now, so this no longer
+   needs its own dot marks. */
 .tile {
   position: relative;
   display: flex;
@@ -172,18 +173,6 @@
   background-color: color-mix(in srgb, var(--surface) 92%, transparent);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
-  background-image:
-    radial-gradient(circle, var(--line-strong) 1.4px, transparent 1.6px),
-    radial-gradient(circle, var(--line-strong) 1.4px, transparent 1.6px),
-    radial-gradient(circle, var(--line-strong) 1.4px, transparent 1.6px),
-    radial-gradient(circle, var(--line-strong) 1.4px, transparent 1.6px);
-  background-repeat: no-repeat;
-  background-size: 3px 3px;
-  background-position:
-    11px 11px,
-    calc(100% - 11px) 11px,
-    11px calc(100% - 11px),
-    calc(100% - 11px) calc(100% - 11px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
