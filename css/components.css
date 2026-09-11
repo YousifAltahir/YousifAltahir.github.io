@@ -221,14 +221,21 @@
 
 /* The hero isn't a link, but gets the same red glyph-edge + lift
    on hover as the project tiles for visual consistency. */
-.identity:hover {
+/* Same treatment for the Toolbox and Education & Achievements
+   cards — neither is a link either, but all the non-project tiles
+   share this red glyph-edge + lift for consistency. */
+.identity:hover,
+.skills-wide:hover,
+.education:hover {
   transform: translateY(-4px);
   background-color: color-mix(in srgb, var(--surface-hover) 94%, transparent);
   border-color: var(--line-strong);
   box-shadow: var(--shadow-hover), inset 0 2px 0 var(--red);
 }
 @supports not (backdrop-filter: blur(1px)) {
-  .identity:hover { background-color: var(--surface-hover); }
+  .identity:hover,
+  .skills-wide:hover,
+  .education:hover { background-color: var(--surface-hover); }
 }
 
 .tile .eyebrow {
