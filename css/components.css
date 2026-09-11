@@ -100,21 +100,17 @@
   font-size: var(--step--1);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  /* Readable over the sun/moon without relying on mix-blend-mode
-     (which needs an unbroken backdrop stack all the way to the
-     fixed, z-index:-1 scenery — several ancestors here create their
-     own stacking context, e.g. the entrance animation, which
-     isolates blending and silently breaks it in both themes).
-     Instead: a solid var(--bg)-colored stroke behind the ink fill.
-     var(--bg) is off-white in light mode / near-black in dark mode
-     — always the OPPOSITE of --ink, and the sun/moon is filled with
-     --ink — so this stroke is invisible against the normal page
-     (same color as the background) but snaps into a crisp, legible
-     outline exactly where the text crosses the sun/moon, in both
-     themes, with one rule. */
-  color: var(--ink);
-  -webkit-text-stroke: 3px var(--bg);
-  paint-order: stroke fill;
+  /* Self-inverting text: white + mix-blend-mode:difference means
+     the rendered color is (255 - whatever's behind it), per pixel.
+     Because our palette is already near-black ink / near-white bg,
+     that math lands almost exactly back on the normal look against
+     the page (white on off-white ≈ near-black, matching --ink) —
+     but automatically flips to near-white wherever it crosses the
+     black sun / dark mountains, and near-black over the white moon
+     in dark mode. No per-theme rule needed; it's the same formula
+     both ways. */
+  color: #fff;
+  mix-blend-mode: difference;
 }
 .section-label::before {
   content: "0" counter(section);
